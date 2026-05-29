@@ -93,7 +93,7 @@ def dejar_reseña():
 
     #   OPCIÓN 3: DEJAR UNA RESEÑA
 
-    print("\n¿Qué película vió?")                                   #   CON OTROS NÚMEROS SE ROMPE
+    print("\n¿Qué película vió?")                                   
     for num, peli in cartelera.items():
         print(f"{num}. {peli}")
 
@@ -102,7 +102,7 @@ def dejar_reseña():
 
     resenia = input(f"\nEscriba su reseña sobre '{pelicula_vista}':\n> ")
 
-    puntuacion = int(input("\nDel 1 al 5, ¿qué puntuación le da? "))    #   DEJA PONER OTROS VALORES
+    puntuacion = int(input("\nDel 1 al 5, ¿qué puntuación le da? "))    #
     puntuacion = validar_opcion(puntuacion, [1, 2, 3, 4, 5])
 
     if puntuacion == 5:
@@ -134,6 +134,3 @@ if __name__ == "__main__":
         elif opcion == 3:
             dejar_reseña()                                                   
             break
-
-        else:                                                               #   OPCIÓN INVÁLIDA
-            print("\nOpción no válida. Por favor, elija 1, 2 o 3.")
