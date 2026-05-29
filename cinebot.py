@@ -1,3 +1,11 @@
+## AUTORES:
+# Franco Perrone Rey
+# Maximiliano Ezequiel Funes
+
+
+# Descripción general sintesis: CineBot es un asistente virtual diseñado para ayudar a los usuarios a reservar entradas, consultar la cartelera y dejar reseñas en el cine MovieTime. El bot ofrece una experiencia interactiva y amigable, guiando al usuario a través de cada proceso de manera clara y eficiente. Con funciones específicas para cada opción del menú, CineBot facilita la gestión de reservas, proporciona información actualizada sobre las películas disponibles y permite a los usuarios compartir sus opiniones sobre las películas que han visto.
+
+
 nombre_bot = "CineBot"
 nombre_cine = "MovieTime"
 
