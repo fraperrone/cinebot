@@ -97,29 +97,31 @@ def dejar_reseña():
     if puntuacion == 5:
         print("\n¡Nos alegra que haya disfrutado la película!")
     elif puntuacion in [3, 4]:
-        print("\nGracias por su comentario.")
+        print("\nGracias por su comentario. Seguiremos mejorando.")
     elif puntuacion in [1, 2]:
         print("\nLamentamos que su experiencia no haya sido la mejor.")
 
     print(f"\nGracias por dejar su reseña en {nombre_cine}. ¡Hasta la próxima!")
     pass
 
-while True:
 
-    menu()
-    opcion = int(input("\nIngrese la opción: "))
+if __name__ == "__main__":
+    while True:
 
-    if opcion == 1:                                                      
-        reservar_entradas()
-        break
+        menu()
+        opcion = int(input("\nIngrese la opción: "))
 
-    elif opcion == 2:                                                   
-        consultar_cartelera()
-        break
+        if opcion == 1:                                                      
+            reservar_entradas()
+            break
 
-    elif opcion == 3:
-        dejar_reseña()                                                   
-        break
+        elif opcion == 2:                                                   
+            consultar_cartelera()
+            break
 
-    else:                                                               #   OPCIÓN INVÁLIDA
-        print("\nOpción no válida. Por favor, elija 1, 2 o 3.")
+        elif opcion == 3:
+            dejar_reseña()                                                   
+            break
+
+        else:                                                               #   OPCIÓN INVÁLIDA
+            print("\nOpción no válida. Por favor, elija 1, 2 o 3.")
