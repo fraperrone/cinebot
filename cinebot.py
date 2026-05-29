@@ -1,6 +1,7 @@
 nombre_bot = "CineBot"
 nombre_cine = "MovieTime"
 
+# descripcion variables globales: se definen las variables globales que contienen la información de la cartelera, los horarios, los precios y los tipos de entradas disponibles en el cine. Estas variables se utilizan en las funciones para mostrar la información al usuario y realizar los cálculos necesarios para la reserva de entradas.
 cartelera = {
     1: "Mortal Kombat 2",
     2: "Stars Wars: The Mandalorian and Grogu",
@@ -34,6 +35,9 @@ def validar_opcion(opcion, opciones_validas):
 
 
 def menu():
+
+    # descripcion: mostrar el menú principal con las opciones disponibles para el usuario
+
     print(f"\nHola, soy {nombre_bot}, el asistente virtual del cine {nombre_cine}")     #   Bienvenida
     print(f"\nIndíqueme cómo le puedo ayudar:")
     print("1. Reservar entradas.")
@@ -43,6 +47,8 @@ def menu():
 def reservar_entradas():
     
     #   OPCIÓN 1: RESERVAR ENTRADAS
+
+    # descripcion: mostrar las películas disponibles, solicitar al usuario que elija una película, luego mostrar los tipos de entradas disponibles y sus precios, solicitar el tipo de entrada y la cantidad, solicitar el nombre de cada asistente, calcular el total a pagar, mostrar un resumen de la compra y agradecer al usuario por su reserva
 
     print("\nTenemos las siguientes películas disponibles:")
     for num, peli in cartelera.items():
@@ -83,6 +89,9 @@ def reservar_entradas():
 
 def consultar_cartelera():
     #   OPCIÓN 2: CONSULTAR CARTELERA
+
+    # descripcion: mostrar la cartelera disponible hoy, incluyendo el nombre de cada película y su horario, y agradecer al usuario por consultar la cartelera
+
     print("\nCartelera disponible hoy:")
     for num, peli in cartelera.items():
         print(f"  - {peli}: {horarios[num]}")
@@ -92,6 +101,8 @@ def consultar_cartelera():
 def dejar_reseña():
 
     #   OPCIÓN 3: DEJAR UNA RESEÑA
+
+    # descripcion: mostrar las películas disponibles y solicitar al usuario que elija una película para dejar su reseña, luego solicitar la reseña y la puntuación, y finalmente agradecer al usuario por su comentario
 
     print("\n¿Qué película vió?")                                   
     for num, peli in cartelera.items():
@@ -118,6 +129,8 @@ def dejar_reseña():
 
 if __name__ == "__main__":
     while True:
+
+        ## descripcion: mostrar el menú principal y solicitar al usuario que elija una opción hasta que ingrese una opción válida
 
         menu()
         opcion = int(input("\nIngrese la opción: "))
