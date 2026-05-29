@@ -25,6 +25,14 @@ tipos_entrada = {
     3: "VIP"
 }
 
+def validar_opcion(opcion, opciones_validas):
+    ## validar opcion ingresada por el usuario hasta que sea correcta
+    while opcion not in opciones_validas:
+        print("\nOpción no válida. Por favor, elija una opción válida.")
+        opcion = int(input("\nIngrese la opción: "))
+    return opcion
+
+
 def menu():
     print(f"\nHola, soy {nombre_bot}, el asistente virtual del cine {nombre_cine}")     #   Bienvenida
     print(f"\nIndíqueme cómo le puedo ayudar:")
@@ -40,7 +48,8 @@ def reservar_entradas():
     for num, peli in cartelera.items():
         print(f"{num}. {peli}")
 
-    opcion_pelicula = int(input("\n¿Qué película quiere ver? "))    #   CON OTROS NÚMEROS SE ROMPE
+    opcion_pelicula = int(input("\n¿Qué película quiere ver? "))    
+    opcion_pelicula = validar_opcion(opcion_pelicula, cartelera.keys())
     pelicula_elegida = cartelera[opcion_pelicula]
 
     print("\n¿Qué tipo de entrada desea?")
@@ -48,6 +57,7 @@ def reservar_entradas():
         print(f"{num}. {tipo} - ${precios[tipo]:,}")
 
     opcion_tipo = int(input("\nIngrese el tipo de entrada: "))
+    opcion_tipo = validar_opcion(opcion_tipo, tipos_entrada.keys())
     tipo_elegido = tipos_entrada[opcion_tipo]
     precio_unitario = precios[tipo_elegido]
 
@@ -93,6 +103,7 @@ def dejar_reseña():
     resenia = input(f"\nEscriba su reseña sobre '{pelicula_vista}':\n> ")
 
     puntuacion = int(input("\nDel 1 al 5, ¿qué puntuación le da? "))    #   DEJA PONER OTROS VALORES
+    puntuacion = validar_opcion(puntuacion, [1, 2, 3, 4, 5])
 
     if puntuacion == 5:
         print("\n¡Nos alegra que haya disfrutado la película!")
@@ -110,6 +121,7 @@ if __name__ == "__main__":
 
         menu()
         opcion = int(input("\nIngrese la opción: "))
+        opcion = validar_opcion(opcion, [1, 2, 3])
 
         if opcion == 1:                                                      
             reservar_entradas()
