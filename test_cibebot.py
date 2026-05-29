@@ -1,5 +1,5 @@
 import pytest
-from cinebot import reservar_entradas, consultar_cartelera, dejar_reseña
+from cinebot_FrancoPerroneRey_MaximilianoEzequielFunes import reservar_entradas, consultar_cartelera, dejar_reseña
 
 def test_reservar_entradas(monkeypatch, capsys):
     # Simulamos las entradas del usuario en orden
