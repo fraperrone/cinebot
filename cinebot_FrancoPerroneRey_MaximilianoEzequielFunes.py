@@ -117,6 +117,7 @@ def dejar_reseña():
         print(f"{num}. {peli}")
 
     opcion_pelicula = int(input("\nIngrese el número de la película: "))
+    opcion_pelicula = validar_opcion(opcion_pelicula, cartelera.keys())
     pelicula_vista = cartelera[opcion_pelicula]
 
     resenia = input(f"\nEscriba su reseña sobre '{pelicula_vista}':\n> ")
